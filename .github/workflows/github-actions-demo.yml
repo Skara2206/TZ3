@@ -3,11 +3,8 @@ jobs:
   build:
     runs-on: ubuntu-latest 
     steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: pip install -r input.txt
-      - name: Install dependencies
-        run: pip install -r Biginput.txt
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - name: Run Test
         run: python -m unittest discover .
   
