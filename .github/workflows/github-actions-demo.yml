@@ -5,9 +5,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: pip install -r input.txt
-      - name: Install dependencies
-        run: pip install -r Biginput.txt
+        run: pip install -r requirements.txt
       - name: Run Test
         run: python -m unittest discover .
   
