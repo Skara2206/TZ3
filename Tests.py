@@ -7,7 +7,7 @@ from operator import mul
 
 
 class Test(unittest.TestCase):
-    def random_array(self, x, y, z):
+    def test_random_array(self, x, y, z):
         a = []
         for i in range(x):
             a.append(randint(y, z))
