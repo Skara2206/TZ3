@@ -7,12 +7,6 @@ from operator import mul
 
 
 class Test(unittest.TestCase):
-    def test_random_array(self, x, y, z):
-        a = []
-        for i in range(x):
-            a.append(randint(y, z))
-        return a
-
     def test_minimum(self):
         a1 = self.random_array(50000, 50000000, 100000000)
         sttime = time.time()
@@ -28,6 +22,12 @@ class Test(unittest.TestCase):
 
         testValue = time2 - time1 >= 0.5 * time2
         self.assertTrue(testValue, "Функция минимума тест на время не прошла")
+        
+    def random_array(self, x, y, z):
+        a = []
+        for i in range(x):
+            a.append(randint(y, z))
+        return a
 
     def test_maximum(self):
         a1 = self.random_array(50000, 50000000, 100000000)
