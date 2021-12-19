@@ -2,9 +2,17 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python_version: [3.6, 3.7, 3.8]
     steps:
       - uses: actions/checkout@v2
+      - name: set up Python all python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{matrix.python-version }}
+          architecture: x64
       - name: Run Test
         run: python -m unittest discover .
   
