@@ -1,14 +1,9 @@
-name: Hello
-
-on: [push]
-
+on: [push, workflow_dispatch]
 jobs:
-  Hello:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Hello
-        run: echo "Hello, GitHub Actions!"
+  build:
+      runs-on: ubuntu-latest 
+      steps:
+        - name: Run Test
+          run: python -m unittest discover .
+  
+      
