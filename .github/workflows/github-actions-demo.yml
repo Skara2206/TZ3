@@ -4,6 +4,8 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
+        with:
+          architecture: x64
       - name: Run Test
         run: python -m unittest discover .
   
