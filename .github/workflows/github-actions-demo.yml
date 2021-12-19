@@ -4,8 +4,10 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
-        with:
-          architecture: x64
+      - name: Install dependencies
+        run: pip install -r input.txt
+      - name: Install dependencies
+        run: pip install -r Biginput.txt
       - name: Run Test
         run: python -m unittest discover .
   
